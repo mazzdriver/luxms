@@ -1,0 +1,233 @@
+[
+  {
+    "firstname": "Cleveland",
+    "lastname": "Walton",
+    "totalprice": 1389,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2020-01-06",
+      "checkout": "2020-10-03"
+    },
+    "additionalneeds": "eu commodo"
+  },
+  {
+    "firstname": "Carrillo",
+    "lastname": "Mcguire",
+    "totalprice": 389,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2018-07-04",
+      "checkout": "2020-02-04"
+    },
+    "additionalneeds": "consectetur minim"
+  },
+  {
+    "firstname": "Newman",
+    "lastname": "Avery",
+    "totalprice": 3395,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2018-01-13",
+      "checkout": "2015-11-28"
+    },
+    "additionalneeds": "culpa ad"
+  },
+  {
+    "firstname": "Stewart",
+    "lastname": "Cooper",
+    "totalprice": 2047,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2016-12-05",
+      "checkout": "2019-11-11"
+    },
+    "additionalneeds": "voluptate sint"
+  },
+  {
+    "firstname": "Holt",
+    "lastname": "Sargent",
+    "totalprice": 799,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2019-12-08",
+      "checkout": "2021-05-16"
+    },
+    "additionalneeds": "in laboris"
+  },
+  {
+    "firstname": "Preston",
+    "lastname": "Rogers",
+    "totalprice": 3177,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2017-02-27",
+      "checkout": "2015-09-20"
+    },
+    "additionalneeds": "tempor nisi"
+  },
+  {
+    "firstname": "Sanford",
+    "lastname": "Hancock",
+    "totalprice": 3278,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2017-04-08",
+      "checkout": "2019-09-28"
+    },
+    "additionalneeds": "ea aute"
+  },
+  {
+    "firstname": "Maggie",
+    "lastname": "Boyle",
+    "totalprice": 1704,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2015-03-24",
+      "checkout": "2020-09-22"
+    },
+    "additionalneeds": "eiusmod labore"
+  },
+  {
+    "firstname": "Lucinda",
+    "lastname": "Delaney",
+    "totalprice": 3614,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2016-04-19",
+      "checkout": "2018-12-02"
+    },
+    "additionalneeds": "ullamco incididunt"
+  },
+  {
+    "firstname": "Lelia",
+    "lastname": "Weber",
+    "totalprice": 3122,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2017-10-18",
+      "checkout": "2014-04-17"
+    },
+    "additionalneeds": "eu ad"
+  },
+  {
+    "firstname": "Maricela",
+    "lastname": "Guthrie",
+    "totalprice": 631,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2022-09-12",
+      "checkout": "2020-07-18"
+    },
+    "additionalneeds": "laborum sit"
+  },
+  {
+    "firstname": "Lucia",
+    "lastname": "Aguirre",
+    "totalprice": 1682,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2017-01-17",
+      "checkout": "2019-11-16"
+    },
+    "additionalneeds": "aliquip est"
+  },
+  {
+    "firstname": "Simmons",
+    "lastname": "Roach",
+    "totalprice": 1805,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2020-04-08",
+      "checkout": "2014-07-14"
+    },
+    "additionalneeds": "fugiat et"
+  },
+  {
+    "firstname": "Mason",
+    "lastname": "Combs",
+    "totalprice": 607,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2019-06-22",
+      "checkout": "2022-02-17"
+    },
+    "additionalneeds": "dolor cillum"
+  },
+  {
+    "firstname": "Darla",
+    "lastname": "Zamora",
+    "totalprice": 2127,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2016-02-12",
+      "checkout": "2017-06-09"
+    },
+    "additionalneeds": "amet anim"
+  },
+  {
+    "firstname": "Fern",
+    "lastname": "Walter",
+    "totalprice": 1906,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2019-04-25",
+      "checkout": "2023-02-23"
+    },
+    "additionalneeds": "deserunt sint"
+  },
+  {
+    "firstname": "Price",
+    "lastname": "Maxwell",
+    "totalprice": 1061,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2020-02-28",
+      "checkout": "2021-12-10"
+    },
+    "additionalneeds": "ea ex"
+  },
+  {
+    "firstname": "Bauer",
+    "lastname": "Neal",
+    "totalprice": 2453,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2021-12-06",
+      "checkout": "2020-05-15"
+    },
+    "additionalneeds": "nisi sint"
+  },
+  {
+    "firstname": "Mamie",
+    "lastname": "Cooley",
+    "totalprice": 821,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2018-12-11",
+      "checkout": "2022-03-30"
+    },
+    "additionalneeds": "ad aliqua"
+  },
+  {
+    "firstname": "Tara",
+    "lastname": "Keith",
+    "totalprice": 1701,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2024-02-27",
+      "checkout": "2017-09-24"
+    },
+    "additionalneeds": "excepteur aute"
+  },
+  {
+    "firstname": "Mclean",
+    "lastname": "Hewitt",
+    "totalprice": 2564,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2016-12-23",
+      "checkout": "2022-05-08"
+    },
+    "additionalneeds": "eu occaecat"
+  }
+]
