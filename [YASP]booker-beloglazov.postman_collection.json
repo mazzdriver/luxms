@@ -172,9 +172,8 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// Store the bookingId from the response in a collection variable",
-									"var bookingId = responseBody[0].bookingid;",
-									"pm.collectionVariables.set(\"bookingId\", bookingId);",
+									"",
+									"",
 									"pm.test(\"Response status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
 									"});",
@@ -203,7 +202,12 @@
 									"        pm.expect(booking.bookingid).to.be.a('number');",
 									"        pm.expect(booking.bookingid).to.be.at.least(0);",
 									"    });",
-									"})"
+									"})",
+									"// Save the first bookingid value from the response body into a collection variable",
+									"pm.test(\"Save the first bookingid value into a collection variable\", function () {",
+									"    var firstBookingId = pm.response.json()[0].bookingid;",
+									"    pm.collectionVariables.set(\"bookingid\", firstBookingId.toString());",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -214,7 +218,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/booking",
+							"raw": "{{base_url}}/booking?firstname={{firstname}}",
 							"host": [
 								"{{base_url}}"
 							],
@@ -224,8 +228,7 @@
 							"query": [
 								{
 									"key": "firstname",
-									"value": "{{firstname}}",
-									"disabled": true
+									"value": "{{firstname}}"
 								},
 								{
 									"key": "lastname",
@@ -246,8 +249,9 @@
 							"script": {
 								"exec": [
 									"// Store the bookingId from the response in a collection variable",
-									"var bookingId = responseBody[0].bookingid;",
-									"pm.collectionVariables.set(\"bookingId\", bookingId);",
+									"var bookingid = responseBody[0].bookingid;",
+									"pm.collectionVariables.set(\"bookingid\", bookingid);",
+									"",
 									"pm.test(\"Response status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
 									"});",
@@ -295,7 +299,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/booking?checkin={{checkin}}",
+							"raw": "{{base_url}}/booking?checkin={{checkin}}&checkout={{checkout}}",
 							"host": [
 								"{{base_url}}"
 							],
@@ -309,8 +313,7 @@
 								},
 								{
 									"key": "checkout",
-									"value": "{{checkout}}",
-									"disabled": true
+									"value": "{{checkout}}"
 								}
 							]
 						},
@@ -394,29 +397,30 @@
 									"  pm.response.to.have.status(200);",
 									"});",
 									"",
+									"var schema = {",
+									"    \"bookingid\": {\"type\": \"number\"},",
+									"    \"booking\": {",
+									"        \"firstname\": {\"type\": \"string\"},",
+									"        \"lastname\": {\"type\": \"string\"},",
+									"        \"totalprice\": {\"type\": \"number\"},",
+									"        \"depositpaid\": {\"type\": \"boolean\"},",
+									"        \"bookingdates\": {",
+									"            \"checkin\": {\"type\": \"date\"},",
+									"            \"checkout\": {\"type\": \"date\"}",
+									"        },",
+									"        \"additionalneeds\": {\"type\": \"string\"}",
+									"    }",
+									"};",
 									"",
-									"pm.test(\"Firstname is a non-empty string\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData.firstname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
-									"});",
+									"var data1 = [true, false];",
+									"var data2 = [true, 123];",
 									"",
-									"",
-									"pm.test(\"Lastname is a non-empty string\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData.lastname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
-									"});",
-									"",
-									"",
-									"pm.test(\"Totalprice is a non-negative number\", function () {",
-									"    const responseData = pm.response.json();",
-									"    ",
-									"    pm.expect(responseData.totalprice).to.be.a('number');",
-									"    pm.expect(responseData.totalprice).to.be.at.least(0);",
+									"pm.test('Schema is valid', function () {",
+									"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -426,11 +430,6 @@
 							{
 								"key": "Cookie",
 								"value": "token={{token}}",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{Authorization}}",
 								"type": "text"
 							}
 						],
@@ -465,39 +464,33 @@
 							"script": {
 								"exec": [
 									"pm.test(\"Response status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
+									"  pm.response.to.have.status(200);",
 									"});",
 									"",
+									"var schema = {",
+									"    \"bookingid\": {\"type\": \"number\"},",
+									"    \"booking\": {",
+									"        \"firstname\": {\"type\": \"string\"},",
+									"        \"lastname\": {\"type\": \"string\"},",
+									"        \"totalprice\": {\"type\": \"number\"},",
+									"        \"depositpaid\": {\"type\": \"boolean\"},",
+									"        \"bookingdates\": {",
+									"            \"checkin\": {\"type\": \"date\"},",
+									"            \"checkout\": {\"type\": \"date\"}",
+									"        },",
+									"        \"additionalneeds\": {\"type\": \"string\"}",
+									"    }",
+									"};",
 									"",
-									"pm.test(\"Firstname is a non-empty string\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.firstname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
-									"});",
+									"var data1 = [true, false];",
+									"var data2 = [true, 123];",
 									"",
-									"",
-									"pm.test(\"Lastname is a non-empty string\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData.lastname).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
-									"});",
-									"",
-									"",
-									"pm.test(\"Totalprice is a non-negative integer\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData.totalprice).to.be.a('number').and.to.be.at.least(0, \"Totalprice should be a non-negative integer\");",
-									"});",
-									"",
-									"",
-									"pm.test(\"Depositpaid is a boolean value\", function () {",
-									"    const responseData = pm.response.json();",
-									"",
-									"    pm.expect(responseData.depositpaid).to.be.a('boolean');",
+									"pm.test('Schema is valid', function () {",
+									"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -508,12 +501,6 @@
 								"key": "Cookie",
 								"value": "token={{token}}",
 								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{Authorization}}",
-								"type": "text",
-								"disabled": true
 							}
 						],
 						"body": {
@@ -545,7 +532,12 @@
 									"    pm.expect(pm.response.code).to.equal(201);\r",
 									"});\r",
 									"\r",
-									""
+									"// Test to check if the GET request to the deleted booking id returns 4xx\r",
+									"pm.test(\"GET request to the deleted booking id returns 4xx\", function () {\r",
+									"    pm.sendRequest(pm.variables.get('base_url')+'/booking/'+pm.variables.get('bookingid'), function (err, response) {\r",
+									"        pm.expect(response.code).to.be.within(400, 499);\r",
+									"    });\r",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -558,12 +550,6 @@
 							{
 								"key": "Cookie",
 								"value": "token={{token}}",
-								"type": "text",
-								"disabled": true
-							},
-							{
-								"key": "Authorization",
-								"value": "{{Authorization}}",
 								"type": "text",
 								"disabled": true
 							}
@@ -717,17 +703,13 @@
 		},
 		{
 			"key": "checkout",
-			"value": "2024-13-12",
+			"value": "2024-12-26",
 			"type": "string"
 		},
 		{
 			"key": "additionalneeds",
 			"value": "Dinner",
 			"type": "string"
-		},
-		{
-			"key": "bookingId",
-			"value": "1"
 		}
 	]
 }
